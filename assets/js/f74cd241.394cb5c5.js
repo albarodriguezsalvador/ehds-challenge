@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkehds_challenge=globalThis.webpackChunkehds_challenge||[]).push([[842],{7190(e){e.exports=JSON.parse('{"metadata":{"permalink":"/ehds-challenge/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":4,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);
