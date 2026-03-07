@@ -1,1 +1,0 @@
-"use strict";(globalThis.webpackChunkehds_challenge=globalThis.webpackChunkehds_challenge||[]).push([[1903],{1912(e){e.exports=JSON.parse('{"blogBasePath":"/ehds-challenge/blog","blogTitle":"Blog","authorsListPath":"/ehds-challenge/blog/authors"}')}}]);
