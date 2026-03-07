@@ -68,7 +68,7 @@ const config = {
         respectPrefersColorScheme: true,
       },
       navbar: {
-        title: 'My Site',
+        title: 'EHDS Challenge',
         logo: {
           alt: 'My Site Logo',
           src: 'img/logo.svg',
@@ -82,56 +82,17 @@ const config = {
           },
          /* {to: '/blog', label: 'Blog', position: 'left'},*/
           {
-            href: 'https://github.com/facebook/docusaurus',
-            label: 'GitHub',
+            href: 'https://www.linkedin.com/in/albarodriguezsalvador/',
+            label: 'Alba Rodríguez Salvador',
             position: 'right',
           },
         ],
+        hideOnScroll: false, 
       },
       footer: {
-        style: 'dark',
-        links: [
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Tutorial',
-                to: '/docs/intro',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'X',
-                href: 'https://x.com/docusaurus',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-             /* {
-                label: 'Blog',
-                to: '/blog',
-              },*/
-              {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        style: 'light',
+        links: [],
+        copyright: `Copyright © ${new Date().getFullYear()} EHDS Challenges | Proyecto Final de Microcredencial CSIC (EHDS/EEDS) | <a href="https://www.linkedin.com/in/albarodriguezsalvador/" class="text-blue-700 hover:text-blue-900">Alba Rodríguez Salvador</a>`,
       },
       prism: {
         theme: prismThemes.github,

@@ -11,7 +11,8 @@
     "clear": "docusaurus clear",
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
-    "write-heading-ids": "docusaurus write-heading-ids"
+    "write-heading-ids": "docusaurus write-heading-ids",
+    "tailwind:init": "tailwindcss init -p"
   },
   "dependencies": {
     "@docusaurus/core": "3.9.2",
@@ -24,7 +25,10 @@
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "3.9.2",
-    "@docusaurus/types": "3.9.2"
+    "@docusaurus/types": "3.9.2",
+    "autoprefixer": "^10.4.27",
+    "postcss": "^8.5.8",
+    "tailwindcss": "^4.2.1"
   },
   "browserslist": {
     "production": [

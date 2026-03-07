@@ -4,32 +4,32 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
+    title: 'Comprende el EEDS',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Aprende los fundamentos y la estructura del Espacio Europeo de Datos de Salud, 
+        sus objetivos estratégicos y cómo impacta en la asistencia sanitaria y la investigación biomédica.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'Aplica tus conocimientos',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Diseña estrategias de gestión de datos sanitarios, planes de implementación y proyectos innovadores, 
+        cumpliendo con la normativa europea y maximizando el valor de los datos.
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'Desarrolla competencias prácticas',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Participa en actividades prácticas, desarrolla protocolos, infografías y proyectos colaborativos que integren 
+        el EEDS en entornos reales de salud digital.
       </>
     ),
   },
@@ -52,8 +52,8 @@ function Feature({Svg, title, description}) {
 export default function HomepageFeatures() {
   return (
     <section className={styles.features}>
-      <div className="container">
-        <div className="row">
+      <div className="container hidden">
+       <div className="row ">
           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />
           ))}
