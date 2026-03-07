@@ -2,6 +2,8 @@
   "name": "ehds-challenge",
   "version": "0.0.0",
   "private": true,
+  "homepage": "https://albarodriguezsalvador.github.io/ehds-challenge",
+
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",

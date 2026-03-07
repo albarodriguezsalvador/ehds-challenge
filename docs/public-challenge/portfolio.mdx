@@ -1,0 +1,249 @@
+---
+sidebar_position: 2
+sidebar_label: "Portfolio" 
+---
+
+# **Proyecto de Transformación Digital en el Espacio Europeo de Datos de Salud** 
+
+Proyecto evaluación del impacto del uso de teleconsultas en la reducción de visitas hospitalarias y la optimización del uso de recursos sanitarios en el Hospital Universitario Cruces. (Proyecto de Uso Secundario de Datos EEDS)  
+
+
+
+## SECCIÓN 1: Contexto y Problema 
+
+**Mi rol y situación actual:** Ejerzo como Investigadora Principal en el **Instituto de Investigación en Salud Digital (IISD)** de la **UPV/EHU**. Mi perspectiva es la de una **usuaria de datos** que busca generar evidencia científica para optimizar la gestión de recursos públicos.
+
+**El problema identificado:** El **Hospital Universitario Cruces** enfrenta una saturación asistencial persistente. Actualmente, existe una fragmentación de datos que impide correlacionar de forma ágil si las teleconsultas reducen efectivamente los reingresos o si solo desplazan la carga asistencial. La falta de interoperabilidad técnica entre niveles (Primaria/Hospitalaria) dificulta un análisis longitudinal de los últimos 5 años.
+
+**EEDS como solución:** El Reglamento EEDS ofrece el marco legal para el **uso secundario** (reutilización de datos seudonimizados para fines distintos a la asistencia directa). Permite acceder de forma masiva y estandarizada a través de un **Organismo de Acceso a Datos (OAD)**, eliminando las barreras de obtención de consentimientos individuales fragmentados y garantizando la calidad del dato mediante estándares comunes.
+
+## SECCIÓN 2: Derechos y Deberes 
+
+### A) Derechos del Paciente 
+
+Los **seis derechos principales** de los interesados (pacientes) se encuentran recogidos en el **Capítulo III del RGPD (Artículos 12 al 22\)**. En el marco del proyecto de evaluación de la telemedicina en el Hospital Universitario Cruces, se aplicarían de la siguiente manera:
+
+1. **Derecho de Transparencia e Información (Artículos 13 y 14):** El paciente tiene derecho a recibir información concisa, transparente e inteligible sobre quién trata sus datos y para qué.  
+   * *Aplicación:* Se informará de forma clara que el **IISD-UPV/EHU** es el usuario de los datos y que el fin es la investigación para optimizar los recursos hospitalarios mediante telemedicina.  
+2. **Derecho de Acceso (Artículo 15):** El paciente tiene derecho a obtener confirmación de si se están tratando sus datos y acceder a detalles como los fines del tratamiento o el plazo de conservación.  
+   * *Aplicación:* En mi proyecto, el paciente podrá verificar si sus registros de consultas virtuales en Osakidetza están incluidos en el estudio de impacto asistencial.  
+3. **Derecho de Rectificación (Artículo 16):** Derecho a que se corrijan sin dilación los datos personales inexactos o se completen los que estén incompletos.  
+   * *Aplicación:* Si se detectara un error en la codificación de un diagnóstico (`DiagnosisCode`) o tipo de consulta (`ConsultationType`), el paciente podrá solicitar su subsanación en el nodo origen de Osakidetza.  
+4. **Derecho de Supresión o "Derecho al Olvido" (Artículo 17):** Derecho a obtener la eliminación de sus datos cuando, entre otros motivos, ya no sean necesarios para los fines recogidos o el interesado retire su consentimiento.  
+   * *Aplicación:* Si un paciente decide que sus datos dejen de formar parte de la serie histórica de 5 años utilizada para el análisis de reingresos, estos deberán ser suprimidos de la base del estudio.  
+5. **Derecho a la Limitación del Tratamiento (Artículo 18):** Derecho a que los datos no se utilicen, pero se conserven, bajo condiciones específicas como la impugnación de su exactitud.  
+   * *Aplicación:* El paciente podrá solicitar que sus datos de teleconsultas se mantengan bloqueados para la investigación mientras se verifica la veracidad de los indicadores de reingreso registrados.  
+6. **Derecho a la Portabilidad de los Datos (Artículo 20):** Derecho a recibir sus datos en un formato estructurado, de uso común y lectura mecánica, y a transmitirlos a otro responsable.  
+   * *Aplicación:* Gracias al uso del estándar **HL7 FHIR**, el paciente podrá ejercer este derecho de forma efectiva (ej. mediante el "Yellow Button"), facilitando que sus datos clínicos de Cruces viajen de forma segura a otros centros de la UE si así lo desea.
+
+### B) Fines Permitidos vs. Prohibidos 
+
+Dado que este proyecto involucra el **uso secundario** de datos sanitarios electrónicos, se rige por el Reglamento del EEDS:
+
+* **Fines Permitidos:** La investigación persigue la **mejora de la prestación sanitaria** (Art. 53.1.f) y el **apoyo a políticas públicas sanitarias** mediante la evaluación del rendimiento del sistema (Art. 53.1.b).  
+* **Fines Prohibidos:** Se prohíbe explícitamente cualquier intento de **reidentificación** de los pacientes (Art. 54.1.d). Asimismo, los resultados nunca podrán ser utilizados para tomar decisiones que afecten a las primas de seguros o condiciones laborales de los pacientes (Art. 54.1.a, b).
+
+### C) Principios de Protección de Datos 
+
+Los **seis principios fundamentales** que rigen cualquier tratamiento de datos personales se encuentran establecidos en el **Artículo 5 del Reglamento (UE) 2016/679 (RGPD)**. Estos son:
+
+1. **Licitud, lealtad y transparencia:** Los datos deben ser tratados de forma legal y clara para el interesado.  
+2. **Limitación de la finalidad:** Los datos se recogen con fines determinados, explícitos y legítimos.  
+3. **Minimización de datos:** Los datos deben ser adecuados, pertinentes y limitados a lo necesario.  
+4. **Exactitud:** Los datos deben estar actualizados y ser exactos.  
+5. **Limitación del plazo de conservación:** No se mantienen más tiempo del necesario para los fines del tratamiento.  
+6. **Integridad y confidencialidad:** Se debe garantizar una seguridad adecuada mediante medidas técnicas u organizativas.
+
+#### Aplicación en el proyecto: 
+
+1. **Minimización de datos (Art. 5.1c):** Solo se solicitan las variables estrictamente necesarias para el análisis estadístico (como el tipo de consulta y el diagnóstico codificado), excluyendo cualquier identificador directo como nombres o DNI.  
+   En la solicitud al OAD, solo se han incluido variables estrictamente necesarias para el análisis estadístico (como el tipo de consulta `Encounter.class` o el diagnóstico `Condition.code`), eliminando cualquier identificador directo como nombres o DNI para reducir riesgos de privacidad  
+2. **Integridad y Confidencialidad (Art. 5.1f):** Los datos se tratarán en un **Entorno Seguro de Procesamiento (SPE/ETS)** que impide la descarga de microdatos y garantiza que solo usuarios autorizados accedan a la información bajo supervisión técnica.
+
+### D) Derecho de Autoexclusión (Opt-out) 
+
+Se respetará el derecho del paciente a oponerse al tratamiento de sus datos de salud para fines de investigación (uso secundario) de forma sencilla. El sistema de Osakidetza integrará un mecanismo donde el ciudadano pueda ejercer su **autoexclusión** por defecto.
+
+* **Excepciones:** Este derecho de veto podría verse limitado en casos de **interés público esencial**, como la protección frente a amenazas transfronterizas graves para la salud o emergencias sanitarias declaradas.
+
+### E) Mecanismos de Auditoría y Confianza 
+
+Para garantizar la confianza, se implementarán **registros de acceso** detallados. Cada vez que un investigador del IISD acceda a un conjunto de datos en el entorno seguro, quedará una traza inalterable de "quién, cuándo y para qué".
+
+* **Supervisión:** El **Organismo de Acceso a Datos (OAD)** será el encargado de monitorear y auditar estas actividades, pudiendo imponer sanciones si detecta usos no autorizados o sospechosos.
+
+### F) Consentimiento e Información al Paciente 
+
+Se informará a los pacientes de forma transparente sobre el valor social de su información.
+
+#### Párrafo explicativo para pacientes: 
+
+*"En el Hospital Universitario Cruces estamos trabajando para mejorar tu atención médica. Tus datos de consultas virtuales, debidamente protegidos y sin tu nombre, se analizan junto con los de otros pacientes para entender cómo la telemedicina puede reducir las esperas y evitar ingresos innecesarios. Tienes derecho a solicitar que tus datos no se incluyan en este estudio de mejora del sistema sin que ello afecte en nada a tu asistencia sanitaria habitual."*
+
+## SECCIÓN 3: Tecnología, Estándares y Seguridad 
+
+### A) Estándares Técnicos 
+
+Para este proyecto, el estándar fundamental de interoperabilidad es **HL7 FHIR (v5.0.0)**. Se utilizará porque permite estructurar la información clínica de forma semánticamente coherente, facilitando que los datos del Servicio Vasco de Salud sean entendidos en todo el ecosistema del EEDS.
+
+#### Mapeo de variables aplicadas: 
+
+* **Identificación:** Se empleará el recurso `Patient.identifier` para gestionar el PatientID seudonimizado.  
+* **Episodios clínicos:** Las teleconsultas y visitas presenciales se diferenciarán mediante el elemento `Encounter.class`.  
+* **Codificación clínica:** Los diagnósticos se extraerán del recurso `Condition.code` utilizando la codificación **ICD-11**. Este enfoque sigue el modelo de **historias clínicas interoperables** promovido por proyectos como **xShare** y **UNICAS**.
+
+### B) Modelo de Implementación
+
+Se opta por un **modelo federado**, siguiendo la arquitectura de proyectos insignia como **EUCAIM** y la **Red UNICAS**.
+
+* **¿Por qué este modelo?** Bajo el lema **"que viajen los datos y no los pacientes"**, este modelo permite que la información original permanezca en los servidores de Osakidetza. Solo se comparten resultados agregados o copias seudonimizadas necesarias para el análisis.  
+* **Ventajas:** Garantiza la **soberanía de los datos** del hospital y reduce los riesgos de seguridad masiva al evitar una base de datos centralizada.  
+* **Desafíos:** Requiere una alta coordinación técnica para asegurar que todos los nodos utilicen los mismos estándares de calidad y metadatos (principios **FAIR**).
+
+#### Tabla Diferencia: Modelo Federado vs. Modelo Centralizado 
+
+| Característica | Modelo Federado (Ej. EUCAIM / UNICAS) | Modelo Centralizado (Enfoque tradicional) |
+| ----- | ----- | ----- |
+| **Ubicación de los datos** | Los datos permanecen en los servidores locales (hospitales o nodos de origen). | Los datos se recolectan y almacenan en un único repositorio o base de datos central. |
+| **Movimiento de información** | **"Viajan los algoritmos/consultas, no los datos"**. El conocimiento se adquiere en el nodo y solo regresa el resultado. | Los datos individuales viajan desde el origen hasta el centro para ser procesados. |
+| **Soberanía y Privacidad** | Mayor control local. Se reducen los riesgos de seguridad al evitar grandes transferencias de datos sensibles. | La responsabilidad de la seguridad se concentra en el administrador del repositorio central. |
+| **Escalabilidad** | Permite conectar un gran número de socios (ej. 95 en EUCAIM o 30 hospitales en UNICAS) manteniendo la autonomía local. | Puede presentar cuellos de botella técnicos y administrativos al gestionar permisos masivos de carga de datos. |
+
+### C) Entornos Seguros de Procesamiento (SPE/ETS) 
+
+Para garantizar la seguridad en el acceso a datos sensibles (registros de diagnósticos y reingresos), el análisis se realizará exclusivamente en un **Entorno de Tratamiento Seguro (ETS)** supervisado por el Organismo de Acceso a Datos.
+
+#### Medidas técnicas implementadas: 
+
+1. **Laboratorios virtuales:** Los investigadores del IISD accederán mediante **autenticación de doble factor** a una infraestructura protegida donde no es posible la descarga de microdatos individuales.  
+2. **Seudonimización robusta:** Se aplicará el tratamiento de datos de modo que no puedan atribuirse a un interesado sin información adicional que se mantiene por separado (Art. 4.5 RGPD).  
+3. **Auditoría y control:** Cada acción dentro del entorno quedará registrada para fines de auditoría, permitiendo al OAD verificar quién accedió a qué datos y para qué fin autorizado.  
+4. **Anonimización de salida:** Solo se permitirá la extracción de resultados estadísticos que hayan superado técnicas de anonimización para evitar la reidentificación residual.
+
+### D) Referencia a Casos de Éxito 
+
+Se han seleccionado dos proyectos clave del Módulo 4 para adaptar sus lecciones al entorno de Cruces:
+
+* **Proyecto xShare:** De esta iniciativa se adopta la estrategia **"solo una vez"**. El objetivo es que los datos registrados durante la teleconsulta asistencial se conviertan automáticamente en un activo interoperable para la investigación, reduciendo la carga administrativa para el personal de Osakidetza.  
+* **Proyecto UNICAS:** De este caso se adapta el modelo de **gobernanza compartida** y la infraestructura federada. Se implementará un nodo de interoperabilidad en el hospital que permita realizar consultas sobre cohortes de pacientes de telemedicina sin comprometer su privacidad, siguiendo el éxito de este proyecto en el sistema sanitario español. 
+
+## SECCIÓN 4: Gobernanza, Actores y OADs. 
+
+### A) Niveles de Gobernanza 
+
+El proyecto opera en una estructura **multinivel coordinada**, asegurando que el dato fluya de forma legal y segura desde el hospital hasta el investigador.
+
+| Nivel | Proyecto: Evaluación Telemedicina Cruces |
+| ----- | ----- |
+| **Local** (Hospital / Osakidetza) | **Tenedor de datos:** El Servicio Vasco de Salud (Osakidetza) custodia las historias clínicas electrónicas.  **Roles:** El personal administrativo y de IT se encarga de catalogar los metadatos y asegurar la calidad del dato en el nodo origen. |
+| **Nacional** (OAD) | **Evaluador y Garante:** Se interactúa con el Organismo de Acceso a Datos (España) mediante la presentación de la solicitud formal de permiso. El OAD evalúa la minimización, emite el permiso vinculante y supervisa el análisis en el Entorno Seguro. |
+| **Europeo** (EHDS Board) | **Coordinador Normativo:** Asegura que los estándares **HL7 FHIR** aplicados en Cruces sean interoperables transfronterizamente. Los resultados del impacto de la telemedicina pueden informar políticas sanitarias a nivel de la Unión Europea. |
+
+### B) Rol del OAD (Organismo de Acceso a Datos) 
+
+Se **solicitaría al OAD** acceso a un conjunto de **datos sanitarios electrónicos seudonimizados** correspondientes a los encuentros clínicos de los últimos cinco años en el Hospital Cruces.   
+Las variables incluyen identificadores seudonimizados (**PatientID**, **EncounterID**), fechas de visita, tipo de consulta (presencial vs. virtual), diagnósticos codificados en **ICD-11** e indicadores de reingreso.  
+**Criterios de evaluación que debe aplicar el OAD:**
+
+1. **Finalidad:** Comprobar que el uso persigue fines permitidos (Art. 53), como la mejora de la prestación sanitaria y evaluación del rendimiento.  
+2. **Minimización:** Verificar que las variables solicitadas son las estrictamente necesarias y que no se piden datos identificativos directos.  
+3. **Seguridad:** Validar que el solicitante trabajará en un **Entorno Seguro de Procesamiento (SPE/ETS)** que impida la descarga de microdatos.
+
+#### Párrafo de solicitud simulada al OAD: 
+
+*"Como investigadores del **IISD-UPV/EHU**, solicitamos formalmente permiso de acceso a datos seudonimizados de Osakidetza (2021-2026) para evaluar el impacto de la telemedicina en la reducción de visitas evitables. El proyecto se basa en el **Art. 53.1.f del Reglamento EEDS** (mejora de la prestación sanitaria). Los datos se tratarán exclusivamente dentro de un **Entorno Seguro de Procesamiento**, aplicando técnicas de anonimización en los resultados finales y respetando la prohibición estricta de reidentificación. El beneficio esperado es la optimización de los recursos públicos en el Servicio Vasco de Salud".*
+
+### C) Actores Involucrados 
+* **Tenedores de datos:** Servicio Vasco de Salud (Osakidetza), responsable de la custodia y calidad de la información original.  
+* **Usuarios de datos:** Investigadores del **Instituto de Investigación en Salud Digital (IISD)** de la UPV/EHU, quienes analizan el dato para generar conocimiento.  
+* **Pacientes:** Ciudadanos que ejercen sus derechos de acceso y portabilidad, y el derecho de **autoexclusión (opt-out)** si no desean que sus datos se usen para este fin.  
+* **Autoridades regulatorias:** El Organismo de Acceso a Datos nacional (evaluador) y la Junta del EEDS (coordinador europeo).
+
+### D) Confianza y Transparencia 
+
+1. #### Construcción de confianza con pacientes: 
+
+   Para construir **confianza y asegurar la transparencia** con los pacientes del Hospital Universitario Cruces en el marco de este proyecto de transformación digital, se implementarían las siguientes estrategias basadas en los estándares del EEDS y el RGPD:  
+* **Garantía del Derecho de Autoexclusión (Opt-out):** Se comunicará de forma clara y sencilla que, bajo el nuevo paradigma del EEDS, los pacientes tienen el **poder de veto** sobre el uso secundario de sus datos. Se facilitará un mecanismo de **"un solo clic"** en el portal de salud de Osakidetza para que cualquier ciudadano pueda oponerse al tratamiento de sus registros de telemedicina para fines de investigación, sin que ello afecte en absoluto a su calidad asistencial.  
+* **Transparencia Proactiva a través del OAD:** Cumpliendo con el Reglamento, la información pública del proyecto (título, líder y propósito) se publicará en el sitio web del **Organismo de Acceso a Datos (OAD)** en un plazo de 30 días tras recibir el permiso. Además, me comprometo legalmente a **hacer públicos los resultados** finales en un plazo no superior a 18 meses tras el procesamiento, permitiendo que la sociedad vea el valor real que sus datos han aportado a la mejora del hospital.  
+* **Comunicación del Uso de Entornos Seguros:** Se informará a los pacientes sobre el uso de **Entornos Seguros de Procesamiento (SPE/ETS)**. La confianza se refuerza al explicar que sus microdatos **nunca salen de la infraestructura protegida**, que está estrictamente prohibida la descarga de información individual y que existe una **garantía contractual contra la reidentificación** que acarrea sanciones severas en caso de incumplimiento.  
+* **Empoderamiento mediante el Yellow Button:** Siguiendo el modelo del proyecto **xShare**, se promoverá que los pacientes utilicen herramientas de portabilidad para gestionar sus propios datos de teleconsultas. Al ver que el sistema les permite compartir sus propios datos de forma segura, se rompe la percepción del dato como algo oculto y se fomenta una cultura de **colaboración ciudadana**.  
+* **Involucración de los Profesionales como Embajadores:** La metodología incluye **cuestionarios a profesionales sanitarios (HCP)** para evaluar la suficiencia clínica. Al integrar a los médicos y enfermeras de Cruces en la investigación, ellos se convierten en el primer punto de confianza para el paciente, pudiendo explicar de primera mano cómo este estudio ayudará a reducir las listas de espera y optimizar las consultas virtuales.  
+  Esta combinación de **control ciudadano, seguridad técnica y transparencia en los resultados** es la base para transformar el "dato estático" en un activo social que cuente con el respaldo de la población.
+
+
+2. #### Mecanismos de transparencia: 
+
+* El resumen público del proyecto será accesible en el portal del OAD.  
+* Además, existe la obligación legal de publicar los resultados finales de la investigación en un plazo de **18 meses** tras finalizar el análisis.   
+* Y se informará al OAD sobre el número de publicaciones científicas y documentos de políticas sanitarias generados.
+
+3. #### Comunicación con profesionales sanitarios: 
+* **Metodología Híbrida:** Para asegurar que la digitalización se perciba como una herramienta de apoyo y no como una carga administrativa, el proyecto integrará a los médicos y enfermeras mediante **cuestionarios (HCP)** dirigidos a evaluar la **suficiencia clínica** de la teleconsulta.  
+* **Feedback Directo:** Estos datos primarios se recogerán fuera del acceso del OAD, garantizando la ética y confidencialidad, y permitiendo que los profesionales influyan en la optimización de los protocolos del hospital basados en su experiencia real.
+
+## SECCIÓN 5: Impacto, Beneficios y Retos Futuros 
+El objetivo fundamental de este proyecto es transformar los registros históricos de **Osakidetza** en conocimiento accionable para mejorar la sostenibilidad del sistema sanitario mediante el uso de la telemedicina.
+
+### A) Beneficios Esperados
+
+* **Para pacientes:** Incremento del **empoderamiento** al facilitar el acceso y la portabilidad de sus datos generados en teleconsultas mediante formatos interoperables. Además, recibirán una **mejor atención** al reducirse los desplazamientos innecesarios y los tiempos de espera para visitas presenciales críticas.  
+* **Para profesionales sanitarios:** Mayor **eficiencia** operativa gracias a la estrategia de "solo una vez" (los datos asistenciales se reutilizan para investigación sin carga administrativa adicional). Los **cuestionarios (HCP)** permitirán integrar su percepción clínica para validar y mejorar los protocolos de atención virtual.  
+* **Para investigadores:** Acceso a un histórico de **cinco años** de datos sanitarios electrónicos seudonimizados y estandarizados, permitiendo identificar patrones de reingreso y eficacia asistencial que antes estaban fragmentados.  
+* **Para la sociedad:** Mejora de la **salud pública** y ahorros significativos mediante la optimización de recursos públicos y la reducción de costes asociados a visitas hospitalarias evitables. Por ejemplo, se estima que el acceso ágil a estos datos puede reducir los procesos de investigación de meses a solo semanas.
+
+### B) Desafíos Anticipados y Abordaje 
+
+* **Técnicos (Interoperabilidad):** La existencia de distintos sistemas de registros médicos que no se "entienden" entre sí.  
+  * *Abordaje:* Uso obligatorio del estándar **HL7 FHIR (v5.0.0)** para mapear variables clínicas y administrativas, asegurando que la información sea comprensible en todo el EEDS.  
+* **Organizacionales:** Resistencia al cambio y necesidad de capacitación del personal en el manejo de nuevos flujos de datos.  
+  * *Abordaje:* Implementar programas de formación y utilizar los **cuestionarios HCP** para que los profesionales se sientan parte activa del diseño del nuevo modelo digital.  
+* **Legales:** Riesgo de incumplimiento del principio de minimización o transferencias no autorizadas.  
+  * *Abordaje:* Trabajar exclusivamente a través de un **Organismo de Acceso a Datos (OAD)** que actúe como garante independiente y evaluador de la licitud del proyecto.  
+* **Éticos (Privacidad y Sesgo):** Riesgo residual de reidentificación indirecta y posibles sesgos en los datos históricos.  
+  * *Abordaje:* Uso de **Entornos Seguros de Procesamiento (SPE/ETS)**, prohibición contractual absoluta de reidentificación y aplicación de técnicas estadísticas de anonimización en los resultados finales.
+
+### C) Indicadores de Éxito (KPIs) 
+
+Para medir el impacto real del proyecto en el Hospital Universitario Cruces, se establecen los siguientes indicadores:
+
+1. **Reducción del 15% en visitas presenciales evitables:** Medido a través de la comparativa de **ConsultationType** y diagnósticos crónicos antes y después de la optimización del protocolo.  
+2. **95% de disponibilidad de datos interoperables:** Porcentaje de registros del nodo de Osakidetza correctamente mapeados a recursos **HL7 FHIR** (**Patient**, **Encounter**, **Condition**).  
+3. **Tasa de autoexclusión (opt-out) inferior al 10%:** Reflejo de la confianza del paciente en el sistema de transparencia y seguridad del proyecto.  
+4. **Publicación de resultados en \<18 meses:** Cumplimiento del plazo legal para hacer público el conocimiento generado y su impacto en las políticas sanitarias regionales.
+
+### D) Timeline 
+
+Se propone una cronología de 18 meses, alineada con los plazos de respuesta del Organismo de Acceso a Datos (OAD) y la obligación de publicar resultados.
+
+**![][image2]**
+
+Figura: Timeline Proyecto evaluación del impacto del uso de teleconsultas en la reducción de visitas hospitalarias y la optimización del uso de recursos sanitarios   
+en el Hospital Universitario Cruces. 
+
+### E) Reflexión Personal 
+
+* #### ¿Qué no sabía antes de este curso que sé ahora? 
+
+  Antes de esta formación, desconocía el funcionamiento técnico de los **Entornos Seguros de Procesamiento (SPE/ETS)**. Pensaba que el acceso a datos implicaba una transferencia de archivos, pero ahora entiendo el concepto de "viajar los algoritmos y no los datos", donde el investigador trabaja en un laboratorio virtual supervisado sin posibilidad de descarga de microdatos. También ignoraba la existencia del **derecho de autoexclusión (opt-out)** supervisado por una autoridad pública independiente (OAD) como alternativa al consentimiento fragmentado.
+
+* #### ¿Cuál fue el módulo más valioso y por qué?  
+
+  El **Módulo 3 (Uso Secundario)** ha sido el más revelador. Define con claridad el cambio de paradigma: el dato de salud deja de ser un registro estático asistencial para convertirse en un **activo de valor social** que puede "reciclarse" para generar conocimiento colectivo. La estructura de "listas blancas" y "negras" (fines permitidos y prohibidos) aporta una seguridad jurídica que antes parecía una barrera burocrática insalvable.
+
+* #### ¿Cómo cambió mi perspectiva sobre los datos de salud y su regulación? 
+
+  Mi visión ha evolucionado de percibir la protección de datos como un obstáculo para la innovación a verla como su **principal facilitador**. El EEDS demuestra que la privacidad y la investigación no son conceptos opuestos, sino que se equilibran mediante estándares como **HL7 FHIR** y la gobernanza de los OAD. La regulación de la UE no busca restringir el dato, sino darle fluidez bajo condiciones de **transparencia y ética**, permitiendo que sistemas como Osakidetza lideren la transformación digital en beneficio del paciente.
+
+## REFERENCIAS 
+
+1. **Reglamento (UE) 2025/327** del Parlamento Europeo y del Consejo, de 11 de febrero de 2025, sobre el Espacio Europeo de Datos de Salud (EEDS).  
+2. **Reglamento (UE) 2016/679** del Parlamento Europeo y del Consejo, de 27 de abril de 2016, relativo a la protección de las personas físicas en lo que respecta al tratamiento de datos personales y a la libre circulación de estos datos (RGPD).  
+3. **Módulo 3: Uso Secundario, fines, prohibiciones y organismos de acceso a datos.** Microcredencial CSIC \- Espacio Europeo de Datos de Salud.  
+4. **Módulo 4: Casos de Éxito y Proyectos de Implementación del Espacio Europeo de Datos de Salud.** Microcredencial CSIC \- Espacio Europeo de Datos de Salud.  
+5. **Proyecto OHSIRIS:** Infraestructura federada de datos para investigación clínica en España liderada por el Hospital Virgen Macarena.  
+6. **Proyecto UNICAS:** Red federada de 30 hospitales para la atención y análisis de datos de enfermedades raras pediátricas.  
+7. **Proyecto xShare:** Iniciativa para facilitar el intercambio de datos mediante el formato europeo EEHRxF y la innovación del "Yellow Button".  
+8. **EUCAIM (European Cancer Imaging Initiative):** Proyecto insignia para el aprendizaje federado aplicado a imágenes oncológicas en toda Europa.  
+9. **TEHDAS (Towards the European Health Data Space):** Acción conjunta para definir las guías de implementación técnica y gobernanza del EEDS.  
+10. **Estándares HL7 FHIR (Fast Healthcare Interoperability Resources):** Guías de implementación técnica v5.0.0 utilizadas para garantizar la interoperabilidad semántica del dato asistencial.
