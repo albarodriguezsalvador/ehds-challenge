@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkehds_challenge=globalThis.webpackChunkehds_challenge||[]).push([[225],{225(e,h,c){c.d(h,{createArchitectureServices:()=>a.S});var a=c(7713);c(808)}}]);

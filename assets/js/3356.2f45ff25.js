@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkehds_challenge=globalThis.webpackChunkehds_challenge||[]).push([[3356],{3356(e,h,a){a.d(h,{createInfoServices:()=>l.v});var l=a(2963);a(808)}}]);
