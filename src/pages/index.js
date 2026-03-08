@@ -26,7 +26,7 @@ function HomepageHeader() {
 
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
-  const [cookieVisible, setCookieVisible] = useState(false); // <--- State aquí
+  const [cookieVisible, setCookieVisible] = useState(true); // <--- State aquí
 
   return (
     <Layout

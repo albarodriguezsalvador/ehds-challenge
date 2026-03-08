@@ -51,6 +51,10 @@ const config = {
         theme: {
           customCss: './src/css/custom.css',
         },
+        gtag: {
+          trackingID: 'G-YSX1ZVHCJF',
+          anonymizeIP: true,
+        },
       }),
     ],
   ],
@@ -92,7 +96,7 @@ const config = {
       footer: {
         style: 'light',
         links: [],
-        copyright: `Copyright © ${new Date().getFullYear()} EHDS Challenges | Proyecto Final de Microcredencial CSIC (EHDS/EEDS) | <a href="https://www.linkedin.com/in/albarodriguezsalvador/" class="text-blue-700 hover:text-blue-900">Alba Rodríguez Salvador</a>`,
+        copyright: `Copyright © ${new Date().getFullYear()} EHDS Challenge | Proyecto Final de Microcredencial CSIC (EHDS/EEDS) | <a href="https://www.linkedin.com/in/albarodriguezsalvador/" class="text-blue-700 hover:text-blue-900">Alba Rodríguez Salvador</a>`,
       },
       prism: {
         theme: prismThemes.github,
