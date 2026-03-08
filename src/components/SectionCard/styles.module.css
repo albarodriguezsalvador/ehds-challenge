@@ -2,7 +2,7 @@
   background-color: white;
   border-radius: 1rem;                /* esquinas redondeadas */
   padding: 1rem;                    /* más espacio interno */
-  margin: 0rem auto;                   /* separa la card y la centra */
+  margin: 1.5rem auto;                   /* separa la card y la centra */
   max-width: 90%;                    /* más ancho que antes */
   width: 90%;                          /* ocupa la mayoría del espacio disponible en pantallas pequeñas */
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* sombra definida */

@@ -15,20 +15,18 @@ function HomepageHeader() {
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
-        <Heading as="h1" className="hero__title" style={{ paddingTop: '2rem' }}>
+        <Heading as="h1" className="hero__title" style={{ paddingTop: '1rem', paddingBottom: '0rem' }}>
           Proyecto Final Microcredencial CSIC
         </Heading>
         <div className="hero__title"> Alba Rodríguez Salvador </div>
-  
       </div>
-      
     </header>
   );
 }
 
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
-  const [cookieVisible, setCookieVisible] = useState(true); // <--- State aquí
+  const [cookieVisible, setCookieVisible] = useState(false); // <--- State aquí
 
   return (
     <Layout
@@ -36,7 +34,6 @@ export default function Home() {
       description="Description will go into a meta tag in <head />">
       <HomepageHeader />
       <main>
-        <HomepageFeatures />
         <SectionCard />
         {cookieVisible && (  // <-- Solo se muestra si cookieVisible = true
           <div
