@@ -5,9 +5,18 @@ sidebar_label: "Portfolio"
 
 # **Proyecto de Transformación Digital en el Espacio Europeo de Datos de Salud** 
 
-Proyecto evaluación del impacto del uso de teleconsultas en la reducción de visitas hospitalarias y la optimización del uso de recursos sanitarios en el Hospital Universitario Cruces. (Proyecto de Uso Secundario de Datos EEDS)  
+## Proyecto evaluación del impacto del uso de teleconsultas en la reducción de visitas hospitalarias y la optimización del uso de recursos sanitarios en el Hospital Universitario Cruces. (Proyecto de Uso Secundario de Datos EEDS)  
 
+### _(Proyecto de Uso Secundario de Datos EEDS)_
 
+:::note Details 
+[ALBA RODRÍGUEZ SALVADOR](https://www.linkedin.com/in/albarodriguezsalvador/)
+
+`2026-03-09`  
+Institución: Estudiante independiente
+:::
+
+---
 
 ## SECCIÓN 1: Contexto y Problema 
 
@@ -216,7 +225,36 @@ Para medir el impacto real del proyecto en el Hospital Universitario Cruces, se 
 
 Se propone una cronología de 18 meses, alineada con los plazos de respuesta del Organismo de Acceso a Datos (OAD) y la obligación de publicar resultados.
 
-**![][image2]**
+```mermaid
+    gantt
+    title Proyecto de Evaluación del Impacto de la Telemedicina: Proyecto de Uso Secundario de Datos en el Hospital Universitario de Cruces
+    dateFormat YYYY-MM
+    axisFormat %Y-%m
+
+    section FASE 1: Preparación y Gobernanza
+    Solicitud formal al OAD (RGPD Art.5 / EEDS Art.53) :a1, 2026-01, 1M
+    Adecuación técnica y mapeo HL7 FHIR v5.0.0 :a2, after a1, 1M
+    Acuerdos legales y garantías contra reidentificación :a3, after a2, 1M
+    Configuración acceso Entorno Seguro de Procesamiento (SPE/ETS) :a4, after a3, 1M
+    Capacitación equipo IISD-UPV/EHU en laboratorio virtual OAD :a5, after a4, 1M
+    Validación técnica y preparación del piloto :a6, after a5, 1M
+
+    section FASE 2: Piloto y Análisis
+    Procesamiento datos secundarios (5 años Hospital de Cruces) :b1, after a6, 2M
+    Ejecución modelos estadísticos :b2, after b1, 1M
+    Cuestionarios a profesionales sanitarios (HCP) :b3, after b2, 1M
+    Integración feedback clínico y datos :b4, after b3, 1M
+    Validación con tasas de reingreso a 30 días :b5, after b4, 1M
+    Informe intermedio del piloto :b6, after b5, 1M
+
+    section FASE 3: Expansión y Evaluación
+    Escalado regional a hospitales de Osakidetza :c1, after b6, 2M
+    Ajuste del modelo analítico :c2, after c1, 1M
+    Evaluación de impacto asistencial :c3, after c2, 1M
+    Redacción de publicaciones científicas :c4, after c3, 1M
+    Publicación en portal de transparencia OAD :c5, after c4, 1M
+    Recomendaciones para planificación sanitaria :c6, after c5, 1M
+```
 
 Figura: Timeline Proyecto evaluación del impacto del uso de teleconsultas en la reducción de visitas hospitalarias y la optimización del uso de recursos sanitarios   
 en el Hospital Universitario Cruces. 

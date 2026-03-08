@@ -43,7 +43,11 @@ html, body, #__docusaurus {
 #__docusaurus > .container {
   flex: 1 0 auto; /* que el contenido principal crezca y deje espacio para footer */
 }
-
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
 .footer {
  position: fixed;   /* Se queda siempre en la pantalla */
   bottom: 0;         /* Al fondo */

@@ -39,3 +39,14 @@ GIT_USER=albarodriguezsalvador npm run deploy
 ```
 
 If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+
+## Deploying via SSH
+
+If you have multiple SSH keys, you can specify which key to use when pushing or deploying:
+
+```bash
+# Push changes using a specific SSH key
+GIT_SSH_COMMAND="ssh -i ~/.ssh/id_ed25519_github -o IdentitiesOnly=yes" git push
+
+# Deploy your Docusaurus site using the same key
+GIT_SSH_COMMAND="ssh -i ~/.ssh/id_ed25519_github -o IdentitiesOnly=yes" npm run deploy

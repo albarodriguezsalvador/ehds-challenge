@@ -1,5 +1,256 @@
 ---
 sidebar_position: 3
+sidebar_label: "Data Request" 
 ---
 
-# Data Request
+# **FORMULARIO OFICIAL DE SOLICITUD DE ACCESO A DATOS DE SALUD ELECTRÓNICOS**
+
+**Espacio Europeo de Datos de Salud (EHDS).**   
+**Solicitud de Permiso de Datos para Uso Secundario.**
+
+---
+
+
+# **SECCIÓN 1 — IDENTIFICACIÓN DEL PROYECTO** 
+
+### **1.1 Nombre del proyecto** 
+
+Evaluación del impacto sanitario de una plataforma de inteligencia artificial conversacional por voz certificada como Software as a Medical Device en el seguimiento de pacientes con Diabetes Mellitus.
+
+### **1.2 Tipo de uso solicitado** 
+
+☑ Investigación científica
+
+☑ Desarrollo y mejora de productos sanitarios digitales (SaMD)
+
+☑ Evaluación del rendimiento del sistema sanitario
+
+### **1.3 Resumen público del proyecto** 
+
+El proyecto tiene como objetivo mejorar el seguimiento clínico de pacientes con diabetes mediante el desarrollo y validación de una plataforma de inteligencia artificial conversacional por voz (Voice AI) certificada como Software as a Medical Device.
+
+La solución permite realizar interacciones automatizadas con pacientes para apoyar el seguimiento remoto, detectar señales tempranas de descompensación clínica y mejorar la adherencia al tratamiento.
+
+Para el desarrollo y validación de los algoritmos de IA se utilizarán datos sanitarios electrónicos seudonimizados procedentes del sistema sanitario público. El análisis de estos datos permitirá entrenar modelos capaces de identificar patrones clínicos relevantes asociados a la evolución de la enfermedad y al riesgo de complicaciones.
+
+Los resultados del proyecto contribuirán al desarrollo de herramientas digitales seguras que faciliten la monitorización de enfermedades crónicas, mejoren la continuidad asistencial y optimicen el uso de recursos sanitarios.
+
+# **SECCIÓN 2 — SOLICITANTE** 
+
+### **2.1 Tipo de solicitante** 
+
+☑ Persona jurídica
+
+### **2.2 Nombre de la entidad** 
+
+Startup europea de salud digital especializada en inteligencia artificial conversacional aplicada a la atención sanitaria.
+
+### 
+
+### **2.3 País de establecimiento** 
+
+España
+
+### **2.4 Naturaleza del organismo** 
+
+☑ Empresa privada del sector de tecnología sanitaria
+
+☑ Desarrollador de Software as a Medical Device (SaMD)
+
+### **2.5 Persona de contacto** 
+
+**Nombre:** John Doe  
+**Cargo:** Director de Investigación y Desarrollo
+
+**Entidad:** Startup de Salud Digital
+
+**Teléfono:** \+34 944 123 456  
+**Correo electrónico:** [john.doe@ehu.eus](mailto:albarodriguezsalvador@gmail.com)
+
+**Rol y responsabilidad:**  
+John Doe será responsable de responder a cualquier consulta relacionada con la solicitud, garantizar el cumplimiento de los fines autorizados, supervisar la seguridad de los datos y servir de enlace directo con el Organismo de Acceso a Datos (OAD).
+
+# **SECCIÓN 3 — FUENTES DE DATOS SOLICITADAS** 
+
+### **3.1 País de procedencia de los datos** 
+
+España
+
+### **3.2 Tenedores de datos** 
+
+Servicio Vasco de Salud (Osakidetza).
+
+### **3.3 Organismo de acceso destinatario** 
+
+Organismo nacional competente para acceso secundario a datos de salud electrónicos del sistema sanitario público (España).
+
+# **SECCIÓN 4 — DESCRIPCIÓN DE LOS DATOS SOLICITADOS** 
+
+### **4.1 Tipo de datos** 
+
+Datos sanitarios electrónicos seudonimizados procedentes de registros clínicos relacionados con el diagnóstico, seguimiento y tratamiento de pacientes con diabetes.
+
+### **4.2 Variables solicitadas**  
+
+| Variables | Descripción | Recurso FHIR |
+| ----- | ----- | ----- |
+| `PatientID` | Identificador seudonimizado del paciente | Patient.identifier |
+| `EncounterID` | Identificador del episodio clínico | Encounter.identifier |
+| `VisitDate` | Fecha de la consulta o interacción clínica | Encounter.period.start |
+| `DiagnosisCode` | Diagnóstico codificado (ICD-11) | Condition.code |
+| `HbA1cValue` | Resultado de hemoglobina glicosilada | Observation.value |
+| `GlucoseLevel` | Nivel de glucosa registrado | Observation.value |
+| `Medication` | Tratamiento farmacológico prescrito | MedicationStatement.medication |
+| `CareSetting` | Nivel asistencial | Encounter.serviceType |
+| `HospitalizationIndicator` | Indicador de hospitalización relacionada con diabetes | Encounter.hospitalization |
+| `CountryOfResidence` | País de residencia | Patient.address.country |
+| `HealthcareProvider` | Identificador del centro sanitario | Organization.identifier |
+
+### **4.3 Periodo temporal** 
+
+Últimos cinco años.
+
+### **4.4 Justificación conforme al principio de minimización** 
+
+Las variables solicitadas son estrictamente necesarias para entrenar y validar algoritmos de inteligencia artificial orientados al seguimiento clínico de pacientes con diabetes.
+
+No se solicitan datos identificativos directos ni información personal sensible que no sea relevante para el objetivo del proyecto.
+
+La selección de variables permite analizar patrones clínicos relacionados con la evolución de la enfermedad, el control glucémico y la utilización de servicios sanitarios, lo que permite evaluar el impacto de estas intervenciones garantizando el principio de minimización (RGPD Art. 5\) y proporcionalidad (EHDS Art. 53).
+
+# **SECCIÓN 5 — PROPÓSITO DEL USO DE LOS DATOS**
+
+### **5.1 Propósito principal** 
+
+El propósito del proyecto es realizar una **evaluación del impacto sanitario y del rendimiento en condiciones reales de práctica clínica** de una plataforma de inteligencia artificial conversacional por voz certificada como Software as a Medical Device (SaMD), utilizada para el seguimiento remoto de pacientes con Diabetes Mellitus.
+
+El acceso a datos sanitarios electrónicos seudonimizados permitirá analizar indicadores clínicos y asistenciales asociados al manejo de la enfermedad, con el fin de generar **evidencia en vida real (real-world evidence)** sobre el impacto de tecnologías digitales basadas en inteligencia artificial en el seguimiento de enfermedades crónicas.
+
+El análisis se realizará exclusivamente con fines de evaluación sanitaria y generación de evidencia para la mejora de la atención clínica y la planificación del sistema sanitario.
+
+### **5.2 Objetivo del proyecto** 
+
+El objetivo del proyecto es evaluar si el uso de una plataforma de inteligencia artificial conversacional por voz en el seguimiento de pacientes con diabetes se asocia con mejoras en indicadores clínicos y asistenciales relevantes.
+
+En particular, el estudio analizará:
+
+* el control metabólico de los pacientes (por ejemplo, niveles de hemoglobina glicosilada)
+
+* la frecuencia de hospitalizaciones o episodios agudos relacionados con la enfermedad
+
+* la utilización de servicios sanitarios
+
+* la continuidad del seguimiento clínico en pacientes con enfermedades crónicas
+
+Los resultados permitirán comprender mejor el papel de las tecnologías digitales basadas en inteligencia artificial como herramientas de apoyo en el manejo de enfermedades crónicas dentro de los sistemas sanitarios europeos.
+
+### **5.3 Beneficios esperados** 
+
+**BENEFICIO PÚBLICO**
+
+El proyecto contribuirá al interés público al generar evidencia empírica sobre el impacto de soluciones digitales basadas en inteligencia artificial en el seguimiento de enfermedades crónicas.
+
+Los resultados permitirán:
+
+Mejorar el conocimiento sobre la efectividad de herramientas de seguimiento remoto en pacientes con Diabetes Mellitus.
+
+Apoyar la toma de decisiones de autoridades sanitarias y responsables de políticas públicas en relación con la adopción de tecnologías de salud digital.
+
+Identificar oportunidades para mejorar la continuidad asistencial y el manejo de enfermedades crónicas mediante herramientas digitales seguras.
+
+Contribuir a la generación de evidencia científica sobre el uso responsable de inteligencia artificial en entornos sanitarios.
+
+Dado que la diabetes representa una de las principales causas de carga de enfermedad en Europa, la generación de evidencia sobre nuevas herramientas de seguimiento clínico puede contribuir a mejorar los resultados en salud y optimizar la utilización de recursos sanitarios.
+
+El acceso a datos sanitarios en el marco del EHDS permitirá generar evidencia en condiciones reales sobre el impacto de tecnologías digitales en salud, contribuyendo a mejorar la calidad, eficiencia y sostenibilidad de los sistemas sanitarios europeos.
+
+# **SECCIÓN 6 — RIESGOS ÉTICOS Y LEGALES** 
+
+### **6.1 Identificación de riesgos éticos** 
+
+1) **Riesgo de reidentificación indirecta:**  
+   Aunque los datos son seudonimizados, existe un riesgo residual de identificación mediante combinación de variables.
+
+**Medidas de mitigación:**
+
+* utilización exclusiva de entornos seguros de procesamiento autorizados por el Organismo de Acceso a Datos  
+* acceso restringido a personal autorizado  
+* prohibición contractual de cualquier intento de reidentificación  
+* aplicación de técnicas de agregación estadística en los resultados publicados
+
+2) **Riesgo de uso indebido de datos:**  
+   Uso fuera del propósito autorizado.
+
+   **Medidas de mitigación:**  
+* limitación estricta del uso de datos a los fines establecidos en el permiso de datos  
+* auditoría interna de cumplimiento  
+* supervisión por parte del Organismo de Acceso a Datos
+
+3) **Riesgo de sesgos algorítmicos:**  
+   Posible generación de conclusiones sesgadas si los datos no representan adecuadamente a toda la población.
+
+	**Medidas de mitigación:**
+
+* análisis del rendimiento del sistema en diferentes subgrupos poblacionales
+
+* evaluación de posibles diferencias en resultados según edad, sexo u otros factores demográficos
+
+* revisión periódica de resultados por parte del equipo investigador
+
+### **Supervisión humana**
+
+El análisis de los datos y la interpretación de los resultados estarán sujetos a supervisión humana por parte del equipo investigador.
+
+El proyecto no implica la toma de decisiones automatizadas sobre pacientes individuales.
+
+### **6.2 Identificación de riesgos legales** 
+
+* Posible incumplimiento del principio de minimización del RGPD
+
+* Tratamiento fuera de los fines permitidos del EHDS
+
+* Transferencia no autorizada de datos
+
+### **6.3 Medidas de mitigación** 
+
+El solicitante aplicará las siguientes salvaguardas:
+
+* Uso exclusivo de entornos seguros de procesamiento (secure processing environment)
+
+* Acceso restringido mediante control de usuarios autorizados
+
+* Prohibición contractual de reidentificación
+
+* Aplicación de técnicas estadísticas de anonimización en resultados
+
+* Supervisión continua por el Organismo de Acceso a Datos
+
+### **6.4 Evaluación ética del proyecto** 
+
+El proyecto presenta un riesgo ético bajo, dado que:
+
+* Los datos utilizados están seudonimizados  
+* No se utilizan datos identificativos directos  
+* No se tomarán decisiones automatizadas sobre pacientes individuales  
+* El proyecto persigue un beneficio significativo para la salud pública mediante la evaluación de herramientas digitales para el seguimiento de enfermedades crónicas.
+
+# **SECCIÓN 7 — DECLARACIÓN DE CUMPLIMIENTO** 
+
+El solicitante declara que:
+
+* El tratamiento se limitará exclusivamente a los fines autorizados
+
+* Se cumplirá el Reglamento EHDS y el RGPD
+
+* No se intentará la reidentificación de los sujetos
+
+* Los resultados del proyecto se difundirán mediante publicaciones científicas o informes técnicos dentro de los plazos establecidos.
+
+## **SECCIÓN 8 — METODOLOGÍA COMPLEMENTARIA**
+
+Aunque los datos del OAD se limitan a registros electrónicos, se complementará la investigación con:
+
+* Entrevistas o cuestionarios dirigidos a profesionales sanitarios para evaluar la utilidad clínica de las soluciones de seguimiento digital basadas en inteligencia artificial.
+
+* Estos datos son **primarios** y se recogen directamente por el equipo investigador, **fuera del acceso OAD**, garantizando el cumplimiento de los principios éticos y de confidencialidad.
+

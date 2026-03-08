@@ -1,5 +1,194 @@
 ---
 sidebar_position: 3
+sidebar_label: "Data Request" 
 ---
 
-# Data Request
+# **FORMULARIO OFICIAL DE SOLICITUD DE ACCESO A DATOS DE SALUD ELECTRÓNICOS**
+
+**Espacio Europeo de Datos de Salud (EHDS).**   
+**Solicitud de Permiso de Datos para Uso Secundario.**
+
+---
+
+# **SECCIÓN 1 — IDENTIFICACIÓN DEL PROYECTO** 
+
+### **1.1 Nombre del proyecto** 
+
+Evaluación del impacto de la telemedicina en la reducción de visitas hospitalarias en el Hospital Universitario Cruces (Osakidetza)
+
+### **1.2 Tipo de uso solicitado**
+
+☑ Investigación científica  
+☑ Evaluación del rendimiento del sistema sanitario  
+☑ Apoyo a políticas públicas sanitarias
+
+### **1.3 Resumen público del proyecto** 
+
+El proyecto tiene como objetivo analizar el impacto del uso de teleconsultas en la reducción de visitas hospitalarias y la optimización del uso de recursos sanitarios en el Hospital Universitario Cruces.
+
+Se utilizarán datos sanitarios electrónicos seudonimizados para evaluar si la telemedicina mejora la continuidad asistencial y reduce la presión sobre los servicios hospitalarios.
+
+Los resultados permitirán informar decisiones basadas en evidencia para la planificación sanitaria y la digitalización segura de la asistencia.
+
+# **SECCIÓN 2 — SOLICITANTE** 
+
+### **2.1 Tipo de solicitante** 
+
+☑ Persona jurídica
+
+### **2.2 Nombre de la entidad** 
+
+Universidad del País Vasco / Euskal Herriko Unibertsitatea (UPV/EHU), Instituto de Investigación en Salud Digital (IISD)
+
+### 
+
+### **2.3 País de establecimiento**
+
+España
+
+### **2.4 Naturaleza del organismo** 
+
+☑ Organismo público de investigación
+
+### **2.5 Persona de contacto** 
+
+**Nombre:** John Doe  
+**Cargo:** Responsable del proyecto  
+**Entidad:** Instituto de Investigación en Salud Digital (IISD), Universidad del País Vasco / Euskal Herriko Unibertsitatea (UPV/EHU)  
+**Teléfono:** \+34 944 123 456  
+**Correo electrónico:** [john.doe@ehu.eus](mailto:albarodriguezsalvador@gmail.com)
+
+**Rol y responsabilidad:**  
+John Doe será responsable de responder a cualquier consulta relacionada con la solicitud, garantizar el cumplimiento de los fines autorizados, supervisar la seguridad de los datos y servir de enlace directo con el Organismo de Acceso a Datos (OAD).
+
+# **SECCIÓN 3 — FUENTES DE DATOS SOLICITADAS** 
+
+### **3.1 País de procedencia de los datos** 
+
+España
+
+### **3.2 Tenedores de datos** 
+
+Servicio Vasco de Salud (Osakidetza).
+
+### **3.3 Organismo de acceso destinatario** 
+
+Organismo nacional competente para acceso secundario a datos de salud electrónicos del sistema sanitario público (España).
+
+# **SECCIÓN 4 — DESCRIPCIÓN DE LOS DATOS SOLICITADOS** 
+
+### **4.1 Tipo de datos** 
+
+Datos sanitarios electrónicos seudonimizados.
+
+### **4.2 Variables solicitadas**  
+
+| Variables | Descripción | Recurso / Elemento FHIR (HL7) |
+| ----- | ----- | ----- |
+| `PatientID` | Identificador único seudonimizado del paciente | Patient.identifier |
+| `EncounterID` | Identificador único del episodio clínico | Encounter.identifier |
+| `VisitDate` | Fecha y hora de la consulta sanitaria | Encounter.period.start |
+| `ConsultationType` | Tipo de consulta (**teleconsulta** o **presencial**) | Encounter.class |
+| `DiagnosisCode` | Diagnóstico principal codificado en ICD-11 | Condition.code |
+| `CareSetting` | Nivel asistencial (atención primaria / hospitalaria) | Encounter.serviceType |
+| `ReadmissionIndicator` | Indica si hubo reingreso hospitalario en 30 días | Encounter.hospitalization.reAdmission |
+| `CountryOfResidence` | País de residencia del paciente | Patient.address.country |
+| `HealthcareProvider` | Identificador del centro sanitario | Organization.identifier |
+
+### **4.3 Periodo temporal** 
+
+Últimos cinco años.
+
+### **4.4 Justificación conforme al principio de minimización** 
+
+Solo se solicitan variables estrictamente necesarias para el análisis estadístico del impacto de la telemedicina en la utilización de servicios hospitalarios.
+
+No se solicitan datos identificativos directos.
+
+El hospital seleccionado constituye un centro de referencia con implementación consolidada de telemedicina, lo que permite evaluar el impacto de estas intervenciones garantizando el principio de minimización (RGPD Art. 5\) y proporcionalidad (EHDS Art. 53).
+
+# **SECCIÓN 5 — PROPÓSITO DEL USO DE LOS DATOS** 
+
+### **5.1 Propósito principal** 
+
+Investigación científica en salud pública, evaluación del rendimiento y mejora de políticas sanitarias.
+
+### **5.2 Objetivo del proyecto** 
+
+Determinar si la telemedicina reduce las visitas hospitalarias evitables y mejora la eficiencia del sistema sanitario.
+
+### **5.3 Beneficios esperados** 
+
+* Mejora de la planificación sanitaria
+
+* Optimización de recursos públicos
+
+* Reducción de costes sanitarios
+
+* Promoción de la digitalización segura en salud
+
+# **SECCIÓN 6 — RIESGOS ÉTICOS Y LEGALES (APARTADO CLAVE PARA EVALUACIÓN)** 
+
+### **6.1 Identificación de riesgos éticos** 
+
+- **Riesgo de reidentificación indirecta:**  
+Aunque los datos son seudonimizados, existe un riesgo residual de identificación mediante combinación de variables.
+
+- **Riesgo de uso indebido de datos:**  
+Uso fuera del propósito autorizado.
+
+- **Riesgo de sesgos algorítmicos:**  
+Posible generación de conclusiones sesgadas si los datos no representan adecuadamente a toda la población.
+
+### **6.2 Identificación de riesgos legales** 
+
+* Posible incumplimiento del principio de minimización del RGPD
+
+* Tratamiento fuera de los fines permitidos del EHDS
+
+* Transferencia no autorizada de datos
+
+### **6.3 Medidas de mitigación** 
+
+El solicitante aplicará las siguientes salvaguardas:
+
+* Uso exclusivo de entornos seguros de procesamiento (secure processing environment)
+
+* Acceso restringido mediante control de usuarios autorizados
+
+* Prohibición contractual de reidentificación
+
+* Aplicación de técnicas estadísticas de anonimización en resultados
+
+* Supervisión continua por el Organismo de Acceso a Datos
+
+### **6.4 Evaluación ética del proyecto** 
+
+El proyecto presenta un riesgo ético bajo, dado que:
+
+* No se utilizan datos identificativos
+
+* No se realiza toma de decisiones automatizadas sobre individuos
+
+* El beneficio social esperado es significativo
+
+# **SECCIÓN 7 — DECLARACIÓN DE CUMPLIMIENTO**
+
+El solicitante declara que:
+
+* El tratamiento se limitará exclusivamente a los fines autorizados
+
+* Se cumplirá el Reglamento EHDS y el RGPD
+
+* No se intentará la reidentificación de los sujetos
+
+* Los resultados serán publicados en el plazo legal establecido
+
+## **SECCIÓN 8 — METODOLOGÍA COMPLEMENTARIA**
+
+Aunque los datos del OAD se limitan a registros electrónicos, se complementará la investigación con:
+
+* Cuestionarios dirigidos a profesionales sanitarios (HCP) para evaluar la percepción sobre la suficiencia clínica de la teleconsulta.
+
+* Estos datos son **primarios** y se recogen directamente por el equipo investigador, **fuera del acceso OAD**, garantizando ética y confidencialidad.
+

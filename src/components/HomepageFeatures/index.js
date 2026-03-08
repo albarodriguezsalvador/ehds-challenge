@@ -54,9 +54,7 @@ export default function HomepageFeatures() {
     <section className={styles.features}>
       <div className="container hidden">
        <div className="row ">
-          {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
-          ))}
+        <p></p>    
         </div>
       </div>
     </section>
