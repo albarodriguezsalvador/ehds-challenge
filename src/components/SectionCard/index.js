@@ -17,21 +17,6 @@ const FeatureList = [
   
 ];
 
-function Feature({Svg, title, description}) {
-  return (
-    <div className={clsx('col col--4')}>
-      <div className="hero__title"> Alba Rodríguez Salvador </div>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
-      </div>
-      <p>{sectionTitle}</p>
-      <div className="text--center padding-horiz--md">
-        <Heading as="h3">{title}</Heading>
-        <p>{subtitle}</p>
-      </div>
-    </div>
-  );
-}
 
 export default function SectionCard() {
   return (
