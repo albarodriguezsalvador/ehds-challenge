@@ -6,19 +6,20 @@ import HomepageFeatures from '@site/src/components/HomepageFeatures';
 
 import Heading from '@theme/Heading';
 import styles from './index.module.css';
+import SectionCard from '../components/SectionCard';
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
-        <Heading as="h1" className="hero__title">
-          {siteConfig.title}
+        <Heading as="h1" className="hero__title" style={{ paddingTop: '2rem' }}>
+          Proyecto Final Microcredencial CSIC
         </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-        </div>
+        <div className="hero__title"> Alba Rodríguez Salvador </div>
+  
       </div>
+      
     </header>
   );
 }
@@ -32,7 +33,9 @@ export default function Home() {
       <HomepageHeader />
       <main>
         <HomepageFeatures />
+        <SectionCard />
       </main>
+      
     </Layout>
   );
 }

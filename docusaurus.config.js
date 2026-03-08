@@ -10,7 +10,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Proyecto Microcredencial CSIC Alba Rodríguez Salvador',
+  title: 'Proyecto Microcredencial CSIC',
   tagline: 'Microcredencial CSIC: El espacio europeo de datos de salud: retos y oportunidades en la asistencia sanitaria y en la investigación biomédica',
   favicon: 'img/favicon.ico',
 
